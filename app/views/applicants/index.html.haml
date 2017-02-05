@@ -1,0 +1,23 @@
+%h1 Listing applicants
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Age
+      %th
+      %th
+      %th
+
+  %tbody
+    - @applicants.each do |applicant|
+      %tr
+        %td= applicant.name
+        %td= applicant.age
+        %td= link_to 'Show', applicant
+        %td= link_to 'Edit', edit_applicant_path(applicant)
+        %td= link_to 'Destroy', applicant, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Applicant', new_applicant_path

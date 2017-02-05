@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title Tag search test
+    %meta(name="viewport" content="width=device-width, initial-scale=1")
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    = render 'layouts/header'
+
+    - flash.each do |message_type, message|
+      .alert.flash.text-center(class="alert-#{message_type}")
+        = message
+        %button.close(type="button" data-dismiss="alert" aria-label="Close")
+          %span(aria-hidden="true") &times;
+
+    -# for Landing page
+    - if request.path == '/'
+      = yield
+    - else
+      .container.wrapper
+        - if yield(:title) != ''
+          .page-header
+            %h2= yield(:title)
+        = yield
+
+    = render 'layouts/footer'

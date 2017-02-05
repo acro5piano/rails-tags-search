@@ -1,0 +1,2 @@
+class ApplicantsTag < ApplicationRecord
+end

@@ -1,0 +1,29 @@
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false",
+                                      "data-target" => "#smartphone-navbar",
+                                      "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      = link_to 'Presto', root_path, class: 'navbar-brand'
+      = link_to '登録者検索', '#', class: 'navbar-brand'
+
+    #smartphone-navbar.collapse
+      %ul.nav.navbar-nav.navbar-right
+        %a.fb-register(href='#')
+
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true",
+                             "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            You
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to 'Your profile', '#'
+              = link_to 'Log out', '#'
