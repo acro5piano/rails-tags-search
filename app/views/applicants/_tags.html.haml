@@ -1,5 +1,5 @@
 %p
   - applicant.tags.uniq.each do |t|
-    = search_form_for Applicant.search do |f|
+    = search_form_for Applicant.search, class: 'applicant_tags' do |f|
       = f.hidden_field :tags_id_in, value: t.id
-      %button.btn.btn-primary.btn-xs= t.name
+      %button.btn.btn-primary.btn-xs= t.applicant_count

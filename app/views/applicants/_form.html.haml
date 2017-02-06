@@ -15,8 +15,8 @@
 
   .field
     = label_tag :tag
-    = collection_select :applicant, :tag_ids, Tag.all, :id, :name,
-            {}, multiple: true, selected: true
+    = collection_select :applicant, :tag_ids, Tag.all, :id, :applicant_count,
+            {}, multiple: true, selected: true, class: 'form-control'
 
   .actions
     = f.submit '保存', class: 'btn btn-primary'

@@ -1,14 +1,14 @@
 class ApplicantsController < ApplicationController
   before_action :set_applicant, only: [:show, :edit, :update, :destroy]
 
-  def search_form
-    @q = Applicant.search(params[:q])
-  end
-
   # GET /applicants
   def index
     @q = Applicant.search(params[:q])
-    @applicants = @q.result
+    @applicants = if params[:q]
+                    @q.result.paginate(page: params[:page], per_page: 20)
+                  else
+                    []
+                  end
   end
 
   # GET /applicants/1

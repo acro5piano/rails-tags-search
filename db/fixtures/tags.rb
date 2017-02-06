@@ -1,5 +1,13 @@
 Tag.seed(:id,
   {id:1, name: '未経験ONC求人を高い確度で応募する'},
-  {id:2, name: '後追いCSO'},
-  {id:3, name: '外資希望'}
+  {id:2, name: '応募確度の高い勤務地'},
+  {id:3, name: '200床以上の病院での勤務経験あり'},
+  {id:4, name: 'PMC経験'},
+  {id:5, name: 'GP経験のみ'},
+  {id:6, name: '後追いCSO'},
+  {id:7, name: '後追いCRO'},
+  {id:8, name: '外資希望'},
+  {id:9, name: '日系希望'},
+  {id:10, name: '転職意欲高'},
+  {id:11, name: '販売でPCスキル有り'},
 )

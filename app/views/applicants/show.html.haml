@@ -1,11 +1,8 @@
 %p#notice= notice
 
-%p
-  %b 名前:
+%h1
   = @applicant.name
-%p
-  %b 年齢:
-  = @applicant.age
+  %small= @applicant.age.to_s + '歳'
 
 = render 'applicants/tags', applicant: @applicant
 
