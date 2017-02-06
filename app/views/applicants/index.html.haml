@@ -1,7 +1,7 @@
 %h1 登録者検索
 
 = search_form_for @q do |f|
-  %p タグを入力して下さい
+  %p タグを選択して下さい
   = f.select :tags_id_in,
     options_from_collection_for_select(Tag.all, :id, :applicant_count, @q.tags_id_in),
     {},
