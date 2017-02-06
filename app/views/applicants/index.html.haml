@@ -1,36 +1,37 @@
-%h1 登録者検索
+.container
+  %h1= link_to '登録者検索', root_path
 
-= search_form_for @q do |f|
-  %p タグを選択して下さい
-  = f.select :tags_id_in,
-    options_from_collection_for_select(Tag.all, :id, :applicant_count, @q.tags_id_in),
-    {},
-    class: 'applicant_tags form-control', multiple: true
-
-
-  .text-center
-    = f.submit '検索', class: 'btn btn-success actions'
-
-- if @applicants.length > 0
-  = will_paginate @applicants
-  %p= page_entries_info @applicants
+  = search_form_for @q do |f|
+    %p タグを選択して下さい
+    = f.select :tags_id_in,
+      options_from_collection_for_select(Tag.all, :id, :applicant_count, @q.tags_id_in),
+      {},
+      class: 'applicant_tags form-control', multiple: true
 
 
-- @applicants.each do |applicant|
-  .row.panel-body
-    %p.pull-right
-      = link_to '詳細', applicant, class: 'btn btn-xs btn-default', target: '_blank'
-      = link_to '編集', edit_applicant_path(applicant), class: 'btn btn-xs btn-default',
-        target: '_blank'
-    %h3
-      = link_to applicant.name, applicant, target: '_blank'
-      %small
-        = applicant.age.to_s + '歳'
+    .text-center
+      = f.submit '検索', class: 'btn btn-success actions'
 
-    = render 'applicants/tags', applicant: applicant
+  - if @applicants.length > 0
+    = will_paginate @applicants
+    %p= page_entries_info @applicants
 
-  %hr
 
-- if @applicants.length > 0
-  = will_paginate @applicants
-  %p= page_entries_info @applicants
+  - @applicants.each do |applicant|
+    .row
+      %p.pull-right
+        = link_to '詳細', applicant, class: 'btn btn-xs btn-default', target: '_blank'
+        = link_to '編集', edit_applicant_path(applicant), class: 'btn btn-xs btn-default',
+          target: '_blank'
+      %h3
+        = link_to applicant.name, applicant, target: '_blank'
+        %small
+          = applicant.age.to_s + '歳'
+
+      = render 'applicants/tags', applicant: applicant
+
+    %hr
+
+  - if @applicants.length > 0
+    = will_paginate @applicants
+    %p= page_entries_info @applicants
