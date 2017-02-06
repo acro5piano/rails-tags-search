@@ -30,3 +30,7 @@
     = render 'applicants/tags', applicant: applicant
 
   %hr
+
+- if @applicants.length > 0
+  = will_paginate @applicants
+  %p= page_entries_info @applicants
