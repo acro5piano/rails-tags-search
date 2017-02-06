@@ -13,6 +13,7 @@
       = f.submit '検索', class: 'btn btn-success actions'
 
   - if @applicants.length > 0
+    %p *検索結果はダミーです
     = will_paginate @applicants
     %p= page_entries_info @applicants
 
