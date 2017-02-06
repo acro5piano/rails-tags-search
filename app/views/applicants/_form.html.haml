@@ -12,5 +12,11 @@
   .field
     = f.label :age
     = f.number_field :age
+
+  .field
+    = label_tag :tag
+    = collection_select :applicant, :tag_ids, Tag.all, :id, :name,
+            {}, multiple: true, selected: true
+
   .actions
-    = f.submit 'Save'
+    = f.submit '保存', class: 'btn btn-primary'

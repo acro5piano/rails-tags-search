@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b 名前:
   = @applicant.name
 %p
-  %b Age:
+  %b 年齢:
   = @applicant.age
 
-= link_to 'Edit', edit_applicant_path(@applicant)
-\|
-= link_to 'Back', applicants_path
+= render 'applicants/tags', applicant: @applicant
+
+%div= link_to '編集', edit_applicant_path(@applicant), class: 'btn btn-default'

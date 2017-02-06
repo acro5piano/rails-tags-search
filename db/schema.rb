@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170205223602) do
 
   create_table "applicants_tags", force: :cascade do |t|
     t.integer  "applicant_id"
-    t.integer  "tags_id"
+    t.integer  "tag_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

@@ -1,0 +1,14 @@
+%h1 登録者検索
+
+= search_form_for @q do |f|
+  %table.table.table
+    %tbody
+      %tr
+        %th タグ
+        %td= f.select :tags_id_in,
+            options_from_collection_for_select(Tag.all, :id, :name, @q.tags_name_cont),
+            {},
+            class: 'applicant_tags', multiple: true
+
+
+  = f.submit '検索', class: 'btn btn-success'

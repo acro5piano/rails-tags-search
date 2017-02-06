@@ -23,6 +23,7 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+
 gem 'listen'
 
 gem 'haml-rails'
@@ -31,3 +32,4 @@ gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'faker'
 gem 'gimei'
 gem 'ransack'
+gem 'seed-fu'
